@@ -126,6 +126,7 @@ Session::Impl::Impl() : curl_(new CurlHolder()) {
     curl_easy_setopt(curl_->handle, CURLOPT_MAXREDIRS, 50L);
     curl_easy_setopt(curl_->handle, CURLOPT_ERRORBUFFER, curl_->error.data());
     curl_easy_setopt(curl_->handle, CURLOPT_COOKIEFILE, "");
+    curl_easy_setopt(curl_->handle, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_0);
 #ifdef CPR_CURL_NOSIGNAL
     curl_easy_setopt(curl_->handle, CURLOPT_NOSIGNAL, 1L);
 #endif
